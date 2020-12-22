@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:template xmlns:f='http://jsf.exadel.com/template'
+   xmlns:u='http://jsf.exadel.com/template/util' 
+   xmlns="http://www.w3.org/1999/xhtml" >	
+<a>
+    <f:call name="utils.encodeId"/>
+	<f:attribute name="onclick" mantadory="true">
+		<f:call name="getOnClick"/>
+	</f:attribute>
+		<f:call name="utils.encodePassThruWithExclusions">
+			<f:parameter value="onclick"/>
+		</f:call>
+	<f:attribute name="style" property="style" mantadory="false"/>
+	<f:attribute name="class" property="styleClass" mantadory="false"/>
+	<f:attribute name="href" value="#" mantadory="true"/>
+	<f:verbatim property="value"/>
+   	<f:break name="end"/>
+</a>
+</f:template>

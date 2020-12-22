@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:root 
+	xmlns:f="http://jsf.exadel.com/template" 
+	xmlns:c=" http://java.sun.com/jsf/core" 
+	xmlns:ui=" http://jsf.exadel.com/ui"
+	xmlns:vcp=" http://jsf.exadel.com/vcp"
+	xmlns:u=" http://jsf.exadel.com/vcp"
+	xmlns:x=" http://jsf.exadel.com/vcp"
+	class="org.ajax4jsf.renderers.ajax.CommandLink"
+	baseclass="org.ajax4jsf.renderers.ajax.AjaxCommandRendererBase"
+	component="org.ajax4jsf.ajax.UIAjaxCommandLink" 
+	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" >
+	<jsp:directive.page import="javax.faces.context.FacesContext,javax.faces.component.UIComponent"/>
+	<jsp:declaration>
+    public boolean getRendersChildren() {
+        return true;
+    }
+	</jsp:declaration>
+	<f:clientid var="clientId"/>	
+	<a
+		id="#{clientId}"
+		name="#{clientId}"
+		type="#{component.attributes['type']}"
+		x:passThruWithExclusions="value,name,onclick,type,href,id"
+		onclick="#{this:getOnClick(context,component)}"
+		href="#"
+		>
+		#{this:getValue(component)}
+		<vcp:body>
+		<f:call name="renderChildren" />
+		</vcp:body>
+	</a>
+
+</f:root>

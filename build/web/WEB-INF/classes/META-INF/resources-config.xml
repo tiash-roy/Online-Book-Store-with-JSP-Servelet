@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource-config>
+	<resource class="org.ajax4jsf.framework.ajax.AjaxScript">
+		<name>org.ajax4jsf.framework.ajax.AjaxScript</name>
+	</resource>
+	<resource class="org.ajax4jsf.framework.ajax.AjaxScript">
+		<name>AjaxScript.js</name>
+	</resource>
+</resource-config>

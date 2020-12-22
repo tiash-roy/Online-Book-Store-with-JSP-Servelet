@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Base iteration component classes and simple repeater implementations.</h1>
+<p>This package contain extensions for JSF UIData component and model, used in extended iterable components</p>
+<img src="dataClasses.png" alt="Class diagramm">
+<p>Main extensions from UIData</p>
+<ul>
+<li>Use java.lang.Object for row key, instead of simple int. allow use this base class in complex structures like tree</li>
+<li>Keep "visual" state ( output behavior ) of component as separate class. In ordinar UIData it was simple first/rows attributes. In extended iteration
+it can include open/closed tree nodes keys, sorting order, selection state, columns width etc. This class provide Range object for iteration on rows in data model.</li>
+<li>For keep base classes independed from complex data models, iteration on rows data moved from component to model and use "visitor" pattern.</li>
+<li>For ajax responses, UIDataAdaptor component can perform updates on single or limited set of data values.</li>
+</ul>
+</body>
+</html>

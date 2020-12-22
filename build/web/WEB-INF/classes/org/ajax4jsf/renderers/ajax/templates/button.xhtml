@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:template xmlns:f='http://jsf.exadel.com/template'
+   xmlns:u='http://jsf.exadel.com/template/util' 
+   xmlns="http://www.w3.org/1999/xhtml" >	
+	<f:break name='end'/>
+<input >
+	<!-- 
+	<f:attribute name="type" property="type" default="button" mantadory="true"/>
+	 -->
+	<f:call name="encodeTypeAndImage" />
+    <f:call name="utils.encodeId"/>
+	<f:call name="utils.encodeId" >
+		<f:parameter value="name"/>
+	</f:call>
+	<f:attribute name="onclick" mantadory="true">
+		<f:call name="getOnClick"/>
+	</f:attribute>
+		<f:call name="utils.encodePassThruWithExclusions">
+			<f:parameter value="onclick"/>
+		</f:call>
+	<f:attribute name="value" property="value" mantadory="true"/>
+	<f:attribute name="style" property="style" mantadory="false"/>
+	<f:attribute name="class" property="styleClass" mantadory="false"/>
+<!-- 	 <f:verbatim  property="value"/> -->
+</input>
+</f:template>

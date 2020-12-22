@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:root 
+	xmlns:f="http://jsf.exadel.com/template" 
+	xmlns:c=" http://java.sun.com/jsf/core" 
+	xmlns:ui=" http://jsf.exadel.com/ui"
+	xmlns:vcp=" http://jsf.exadel.com/vcp"
+	xmlns:u=" http://jsf.exadel.com/vcp"
+	xmlns:x=" http://jsf.exadel.com/vcp"
+	class="org.ajax4jsf.renderers.ajax.LogRenderer"
+	baseclass="org.ajax4jsf.framework.renderer.AjaxComponentRendererBase"
+	component="org.ajax4jsf.ajax.UIAjaxLog" 
+	xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" >
+	<jsp:directive.page import="javax.faces.context.FacesContext,javax.faces.component.UIComponent"/>
+	<f:clientid var="clientId"/>
+	<jsp:scriptlet> if(component.isPopup()){</jsp:scriptlet>
+	<script 
+		id="#{clientId}"
+		type="text/javascript"
+		>
+		LOG.registerPopup('#{component.hotkey}','#{component.name}',#{component.width},#{component.height});
+	</script>
+	<jsp:scriptlet>} else {</jsp:scriptlet>
+		<div id="logConsole"
+		x:style='width:#{component.width};height:#{component.height};overflow:auto;#{component.attributes["style"]}'
+		x:passThruWithExclusions="value,name,id,style"
+		/>
+	<jsp:scriptlet> } </jsp:scriptlet>
+</f:root>
